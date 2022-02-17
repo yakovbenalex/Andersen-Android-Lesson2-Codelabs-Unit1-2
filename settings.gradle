@@ -15,3 +15,4 @@ dependencyResolutionManagement {
 rootProject.name = "Anderen Android Lesson 2"
 include ':app'
 include ':unit1_3textandscrollingviews'
+include ':Unit1_4 Use project templates'
