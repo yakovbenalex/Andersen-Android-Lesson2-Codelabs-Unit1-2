@@ -2,6 +2,7 @@ package ru.opalevapps.unit2_1activitiesandintents
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.PersistableBundle
 import android.util.Log
 import android.view.View
 import android.widget.EditText
@@ -25,6 +26,21 @@ class MainActivity : AppCompatActivity() {
         mMessageEditText = findViewById(R.id.editText_main)
         mReplyHeadTextView = findViewById(R.id.text_header_reply)
         mReplyTextView = findViewById(R.id.text_message_reply)
+
+        // Restore the saved state.
+        // See onSaveInstanceState() for what gets saved.
+        // Restore the saved state.
+        // See onSaveInstanceState() for what gets saved.
+        if (savedInstanceState != null) {
+            val isVisible = savedInstanceState.getBoolean("reply_visible")
+            // Show both the header and the message views. If isVisible is
+            // false or missing from the bundle, use the default layout.
+            if (isVisible) {
+                mReplyHeadTextView?.visibility = View.VISIBLE
+                mReplyTextView?.visibility = View.VISIBLE
+                mReplyTextView?.text = savedInstanceState.getString("reply_text")
+            }
+        }
     }
 
     fun launchSecondActivity(view: View) {
@@ -54,5 +70,43 @@ class MainActivity : AppCompatActivity() {
                 mReplyTextView!!.visibility = View.VISIBLE
             }
         }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.d(LOG_TAG, "onStart")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.d(LOG_TAG, "onResume")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.d(LOG_TAG, "onPause")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.d(LOG_TAG, "onStop")
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        Log.d(LOG_TAG, "onRestart")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d(LOG_TAG, "onDestroy")
+    }
+
+    override fun onSaveInstanceState(outState: Bundle, outPersistentState: PersistableBundle) {
+        super.onSaveInstanceState(outState, outPersistentState)
+        if (mReplyHeadTextView?.visibility == View.VISIBLE) {
+            outState.putBoolean("reply_visible", true)
+        }
+        outState.putString("reply_text", mReplyTextView?.text.toString())
     }
 }

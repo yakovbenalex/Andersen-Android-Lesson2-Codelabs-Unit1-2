@@ -2,6 +2,7 @@ package ru.opalevapps.unit2_1activitiesandintents
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.EditText
 import android.widget.TextView
@@ -11,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 class SecondActivity : AppCompatActivity() {
     val EXTRA_REPLY = "ru.opalevapps.unit2_1activitiesandintents.extra.REPLY"
     private var mReply: EditText? = null
+    val LOG_TAG = SecondActivity::class.java.simpleName
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,5 +37,7 @@ class SecondActivity : AppCompatActivity() {
         replyIntent.putExtra(EXTRA_REPLY, reply)
         setResult(RESULT_OK, replyIntent)
         finish()
+
+        Log.d(LOG_TAG, "End SecondActivity")
     }
 }
