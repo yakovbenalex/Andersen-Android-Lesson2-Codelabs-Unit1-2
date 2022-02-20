@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Lesson2 Shopping-list</string>
+    <string name="label_shopping_list">Shopping List</string>
+    <string name="button_add_item">Add item</string>
+    <string name="button_clear_list">Clear List</string>
+    <string name="button_add_shopping_item">Add Shopping Item</string>
+    <string name="label_available_items">Available items</string>
+    <string name="label_all_textViews_occupied">All shopping positions is occupied!\nPlease, clear list!</string>
+</resources>
