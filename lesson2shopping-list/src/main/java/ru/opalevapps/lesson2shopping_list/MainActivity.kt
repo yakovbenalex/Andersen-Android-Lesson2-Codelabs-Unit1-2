@@ -1,9 +1,12 @@
 package ru.opalevapps.lesson2shopping_list
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
+import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 
@@ -77,6 +80,27 @@ class MainActivity : AppCompatActivity() {
                         Toast.LENGTH_SHORT
                     ).show()
             }
+        }
+    }
+
+    // find specified shop on map
+    fun findShopOnMap(view: View) {
+        // find views by id
+        val editText_shop_name = findViewById<EditText>(R.id.editText_shop_name)
+        val editText_shop_city = findViewById<EditText>(R.id.editText_shop_city)
+
+        val shop_name = editText_shop_name.text.toString()
+        val shop_city = editText_shop_city.text.toString()
+
+        // Parse the location and create the intent.
+        val addressUri = Uri.parse("geo:0,0?q=$shop_city $shop_name")
+        val intent = Intent(Intent.ACTION_VIEW, addressUri)
+
+        // Find an activity to handle the intent, and start that activity.
+        if (intent.resolveActivity(packageManager) != null) {
+            startActivity(intent)
+        } else {
+            Log.d("ImplicitIntents", "Can't handle this intent!")
         }
     }
 }

@@ -6,4 +6,11 @@
     <string name="button_add_shopping_item">Add Shopping Item</string>
     <string name="label_available_items">Available items</string>
     <string name="label_all_textViews_occupied">All shopping positions is occupied!\nPlease, clear list!</string>
+    <string name="label_city">City</string>
+    <string name="label_shop_name">Shop name</string>
+    <string name="default_shop_name">Пятерочка</string>
+    <string name="hint_shop_name">Shop name</string>
+    <string name="hint_city">City</string>
+    <string name="default_shop_city">СПб</string>
+    <string name="button_find">Find</string>
 </resources>
