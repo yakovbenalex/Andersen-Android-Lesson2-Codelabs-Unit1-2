@@ -15,3 +15,7 @@
 local.properties
 /.idea/
 /build/
+/unit1_3textandscrollingviews/.gitignore
+/Unit1_4 Use project templates/.gitignore
+/unit2_1activitiesandintents/.gitignore
+/unit2_1activitiesandintents/proguard-rules.pro

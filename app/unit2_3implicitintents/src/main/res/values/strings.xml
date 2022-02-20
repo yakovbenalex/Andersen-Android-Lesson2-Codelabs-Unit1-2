@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Unit2_3 Implicit intents</string>
+
+    <string name="edittext_uri">http://google.com</string>
+    <string name="button_uri">Open Website</string>
+
+    <string name="edittext_loc">Saint-Petersburg</string>
+    <string name="button_loc">Open Location</string>
+
+    <string name="edittext_share">\'Twas brillig and the slithy toves</string>
+    <string name="button_share">Share This Text</string>
+
+    <string name="share_text_with">Share this text with:</string>
+    <string name="implicit_intents_receiver">Implicit Intents Receiver</string>
+</resources>
